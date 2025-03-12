@@ -17,11 +17,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
-    public String test() {
-        return "Hello World";
-    }
-
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {
         return ResponseEntity.ok(userService.saveUser(user));
